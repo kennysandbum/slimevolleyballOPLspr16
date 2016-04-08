@@ -1,7 +1,5 @@
 #lang racket
  (require racket/gui/base)
-
-
 (define frame (new frame%
                    [label "Example"]
                    [width 800]
@@ -37,10 +35,5 @@
                 (send dc draw-rectangle 0 0 100 30)
                 ;(make-object color% 0 0 255 [180]))
                 )]))
-(define dctxt (send mycanvas get-dc))
-(define (update-slime x y) (send dctxt draw-rectangle x y 100 30))
 (send mycanvas set-canvas-background (make-object color% 0 0 155 .99))
 (send frame show #t)
-(update-slime 500 500)
-(send mycanvas refresh-now)
- 
